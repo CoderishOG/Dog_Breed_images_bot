@@ -22,14 +22,12 @@ bot.help((ctx)=>{
   bot.command('get',(ctx)=>{
   let name = '';
   let arr = ctx.message.text.split(' ');
-  console.log(ctx.from);
   if (arr.length === 1) {
     ctx.reply(
       `Enter the name of the dog breed + no. of images u want after the /get command (Example - /get hound 3)`
     );
   } else {
     let n = arr[2];
-    console.log(n);
     name = arr[1];
     let complete = name;
     let url = `https://dog.ceo/api/breed/${name}/images/random/${n}`;
