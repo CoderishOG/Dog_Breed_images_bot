@@ -1,5 +1,14 @@
 const {Telegraf}=require('telegraf');
+const express=require('express')
 require('dotenv').config();
+const app=express();
+app.get("/",(req,res)=>{
+  res.send("hello world")
+})
+const port=3001;
+app.listen(port,()=>{
+  console.log(`Server running at http://localhost:${port}`)
+})
 const bot=new Telegraf(process.env.BOT_TOKEN);
 bot.catch((err, ctx) => {
   console.error(`Error for ${ctx.updateType}`, err);
